@@ -71,34 +71,18 @@
 (require 'mouse) ;; needed for iterm2 compatibility
 (xterm-mouse-mode t)
 
-(setq mouse-wheel-scroll-amount '(1 ((shift) . 1))) ;; one line at a time
-
-
-
-(mouse-wheel-mode t)
-  ;; scroll one line at a time (less "jumpy" than defaults)
-    
-(setq mouse-wheel-scroll-amount '(1 ((shift) . 1))) ;; one line at a time
-    
-(setq mouse-wheel-progressive-speed nil) ;; don't accelerate scrolling
-    
-;(setq mouse-wheel-follow-mouse 't) ;; scroll window under mouse
-    
-;(setq scroll-step 1) ;; keyboard scroll one line at a time
-
-;(setq scroll-conservatively 5)
-
-
-
-;(global-set-key [mouse-4] '(lambda ()
-;                           (interactive)
-;                           (scroll-down 1)))
-;(global-set-key [mouse-5] '(lambda ()
-;                           (interactive)
-;                           (scroll-up 1)))
+(global-set-key [mouse-4] '(lambda ()
+                           (interactive)
+                           (scroll-down 1)))
+(global-set-key [mouse-5] '(lambda ()
+                           (interactive)
+                           (scroll-up 1)))
 (setq mouse-sel-mode t)
 (defun track-mouse (e))
 
+;(setq mouse-wheel-scroll-amount '(0.07))
+;(setq mouse-wheel-progressive-speed nil)
+;(setq ring-bell-function 'ignore)
 
 ;; ========== Support Wheel Mouse Scrolling ==========
 
@@ -116,8 +100,18 @@
 ;(setq scroll-conservatively 5)
 
 
-(global-set-key [mouse-4] (kbd "C-u 1 C-v")) ;
-(global-set-key [mouse-5] (kbd "C-u 1 M-v")) ;
+;(global-set-key [mouse-4] (kbd "C-u 1 C-v")) ;
+;(global-set-key [mouse-5] (kbd "C-u 1 M-v")) ;
 
-;(global-set-key (kbd "<s-mouse-1>") (kbd "C-u 1 C-v")) ;
-;(global-set-key (kbd "<s-mouse-2>") (kbd "C-u 1 M-v")) ;
+
+(add-to-list 'load-path "~/.emacs.d/el-get/el-get")
+
+(unless (require 'el-get nil 'noerror)
+  (with-current-buffer
+      (url-retrieve-synchronously
+       "https://raw.githubusercontent.com/dimitri/el-get/master/el-get-install.el")
+    (goto-char (point-max))
+    (eval-print-last-sexp)))
+
+(add-to-list 'el-get-recipe-path "~/.emacs.d/el-get-user/recipes")
+(el-get 'sync)
