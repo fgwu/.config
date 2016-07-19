@@ -1,4 +1,3 @@
- ; for linux kernel style
 (defun c-lineup-arglist-tabs-only (ignored)
   "Line up argument lists by tabs, not spaces"
   (let* ((anchor (c-langelem-pos c-syntactic-element))
@@ -53,3 +52,72 @@
 ; for etags
 ;(setq tags-table-list
 ;      '("/home/fenggang/3.14.0"))
+
+
+
+;(setq mouse-wheel-scroll-amount '(0.07))
+;(setq mouse-wheel-progressive-speed nil)
+;(setq ring-bell-function 'ignore)
+
+;(require 'smooth-scroll)
+
+;;keep cursor at same position when scrolling
+(setq scroll-preserve-screen-position 1)
+;;scroll window up/down by one line
+(global-set-key (kbd "M-n") (kbd "C-u 1 C-v"))
+(global-set-key (kbd "M-p") (kbd "C-u 1 M-v"))
+
+;; mouse integration
+(require 'mouse) ;; needed for iterm2 compatibility
+(xterm-mouse-mode t)
+
+(setq mouse-wheel-scroll-amount '(1 ((shift) . 1))) ;; one line at a time
+
+
+
+(mouse-wheel-mode t)
+  ;; scroll one line at a time (less "jumpy" than defaults)
+    
+(setq mouse-wheel-scroll-amount '(1 ((shift) . 1))) ;; one line at a time
+    
+(setq mouse-wheel-progressive-speed nil) ;; don't accelerate scrolling
+    
+;(setq mouse-wheel-follow-mouse 't) ;; scroll window under mouse
+    
+;(setq scroll-step 1) ;; keyboard scroll one line at a time
+
+;(setq scroll-conservatively 5)
+
+
+
+;(global-set-key [mouse-4] '(lambda ()
+;                           (interactive)
+;                           (scroll-down 1)))
+;(global-set-key [mouse-5] '(lambda ()
+;                           (interactive)
+;                           (scroll-up 1)))
+(setq mouse-sel-mode t)
+(defun track-mouse (e))
+
+
+;; ========== Support Wheel Mouse Scrolling ==========
+
+;(mouse-wheel-mode t)
+  ;; scroll one line at a time (less "jumpy" than defaults)
+    
+;(setq mouse-wheel-scroll-amount '(1 ((shift) . 1))) ;; one line at a time
+    
+;(setq mouse-wheel-progressive-speed nil) ;; don't accelerate scrolling
+    
+;(setq mouse-wheel-follow-mouse 't) ;; scroll window under mouse
+    
+;(setq scroll-step 1) ;; keyboard scroll one line at a time
+
+;(setq scroll-conservatively 5)
+
+
+(global-set-key [mouse-4] (kbd "C-u 1 C-v")) ;
+(global-set-key [mouse-5] (kbd "C-u 1 M-v")) ;
+
+;(global-set-key (kbd "<s-mouse-1>") (kbd "C-u 1 C-v")) ;
+;(global-set-key (kbd "<s-mouse-2>") (kbd "C-u 1 M-v")) ;
