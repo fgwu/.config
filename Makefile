@@ -1,8 +1,6 @@
 install:
-	sudo yum install net-tools emacs git cscope 
-	sudo yum groupinstall 'Development Tools'
-	sudo yum install ncurses-devel
-	sudo yum install bc
+	sudo yum -y install net-tools emacs git cscope ncurses-devel bc
+	sudo yum -y groupinstall 'Development Tools'
 	cp .bashrc ~
 	cp .bash_aliases ~
 	cp .emacs ~
