@@ -7,3 +7,4 @@ install:
 	sudo cp myemacs /usr/local/bin
 	git config --global user.name "Fenggang Wu"
 	git config --global user.email "fenggang.wu@gmail.com"
+	git config --global push.default simple
