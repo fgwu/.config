@@ -8,7 +8,12 @@ install:
 	git config --global user.name "Fenggang Wu"
 	git config --global user.email "fenggang.wu@gmail.com"
 	git config --global push.default simple
-	sudo cp hostname/network /etc/sysconfig/networ
+	make hostname
+
+hostname: Makefile
+	sudo cp hostname/network /etc/sysconfig/network
 	sudo cp hostname/hosts /etc/hosts
 	sudo cp hostname/hostname /etc/hostname
+	sudo hostname cent-hpe
+	hostname
 	sudo /etc/init.d/network restart
