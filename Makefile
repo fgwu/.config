@@ -14,3 +14,7 @@ install:
 	sudo hostname cent-hpe
 	hostname
 	sudo /etc/init.d/network restart
+
+
+grub-update:
+	sudo grub2-mkconfig -o /boot/grub2/grub.cfg
