@@ -1,5 +1,5 @@
 install:
-	sudo yum -y install net-tools emacs git cscope ncurses-devel bc mlocate xauth
+	sudo yum -y install net-tools emacs git cscope ncurses-devel bc mlocate xauth crash
 	sudo yum -y groupinstall 'Development Tools'
 	cp .bashrc ~
 	cp .bash_aliases ~
