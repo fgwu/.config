@@ -1,5 +1,5 @@
 install:
-	sudo yum -y install net-tools emacs git cscope ncurses-devel bc mlocate xauth crash
+	sudo yum -y install net-tools emacs git cscope ncurses-devel bc mlocate xauth crash wget
 	sudo yum -y groupinstall 'Development Tools'
 	cp .bashrc ~
 	cp .bash_aliases ~
@@ -8,6 +8,7 @@ install:
 	git config --global user.name "Fenggang Wu"
 	git config --global user.email "fenggang.wu@gmail.com"
 	git config --global push.default simple
+	git config --global core.editor emacs
 	sudo cp hostname/network /etc/sysconfig/network
 	sudo cp hostname/hosts /etc/hosts
 	sudo cp hostname/hostname /etc/hostname
