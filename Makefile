@@ -19,6 +19,7 @@ centos-install:
 ubuntu-install:
 	sudo apt-get -y install net-tools emacs git cscope cscope-el bc mlocate xauth crash wget
 	cp .bashrc-ubuntu ~/.bashrc 
+	cp .bash_aliases ~
 	cp .emacs ~
 	sudo cp myemacs /usr/local/bin
 	git config --global user.name "Fenggang Wu"
