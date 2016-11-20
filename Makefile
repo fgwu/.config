@@ -17,7 +17,7 @@ centos-install:
 	sudo /etc/init.d/network restart
 
 ubuntu-install:
-	sudo apt-get -y install net-tools emacs git cscope cscope-el bc mlocate xauth crash wget
+	sudo apt-get -y install net-tools emacs git cscope cscope-el bc mlocate xauth crash wget libncurses-dev
 	cp .bashrc-ubuntu ~/.bashrc 
 	cp .bash_aliases ~
 	cp .emacs ~
