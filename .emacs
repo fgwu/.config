@@ -48,7 +48,7 @@
  '(cscope-file-face ((t (:foreground "cyan"))))
  '(cscope-line-face ((t (:foreground "brightblack"))))
  '(font-lock-function-name-face ((t (:foreground "cyan")))))
-
+(set-face-foreground 'minibuffer-prompt "brightcyan")
 
 ; for etags
 ;(setq tags-table-list
