@@ -49,6 +49,7 @@
  '(cscope-line-face ((t (:foreground "brightblack"))))
  '(font-lock-function-name-face ((t (:foreground "cyan"))))
  '(font-lock-string-face ((t (:foreground "red")))))
+
 (set-face-foreground 'minibuffer-prompt "brightcyan")
 
 ; for etags
