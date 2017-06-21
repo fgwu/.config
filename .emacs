@@ -28,18 +28,18 @@
                 (setq show-trailing-whitespace t)
                 (c-set-style "linux-tabs-only")))))
 
-(setq c-basic-offset 8)
+(setq c-basic-offset 2)
 
 ; for cscope
 (require 'xcscope)
-
+(cscope-setup)
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- )
+ '(inhibit-startup-screen t))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -47,8 +47,9 @@
  ;; If there is more than one, they won't work right.
  '(cscope-file-face ((t (:foreground "cyan"))))
  '(cscope-line-face ((t (:foreground "brightblack"))))
- '(font-lock-function-name-face ((t (:foreground "cyan")))))
-
+ '(font-lock-function-name-face ((t (:foreground "cyan"))))
+ '(font-lock-string-face ((t (:foreground "red")))))
+(set-face-foreground 'minibuffer-prompt "brightcyan")
 
 ; for etags
 ;(setq tags-table-list
@@ -81,24 +82,31 @@
 (setq mouse-sel-mode t)
 (defun track-mouse (e))
 
-;(setq mouse-wheel-scroll-amount '(0.07))
-;(setq mouse-wheel-progressive-speed nil)
-;(setq ring-bell-function 'ignore)
+(setq mouse-wheel-scroll-amount '(0.07))
+(setq mouse-wheel-progressive-speed nil)
+(setq ring-bell-function 'ignore)
 
 ;; ========== Support Wheel Mouse Scrolling ==========
 
-;(mouse-wheel-mode t)
+(mouse-wheel-mode t)
   ;; scroll one line at a time (less "jumpy" than defaults)
     
-;(setq mouse-wheel-scroll-amount '(1 ((shift) . 1))) ;; one line at a time
+(setq mouse-wheel-scroll-amount '(1 ((shift) . 1))) ;; one line at a time
     
-;(setq mouse-wheel-progressive-speed nil) ;; don't accelerate scrolling
+(setq mouse-wheel-progressive-speed nil) ;; don't accelerate scrolling
     
-;(setq mouse-wheel-follow-mouse 't) ;; scroll window under mouse
+(setq mouse-wheel-follow-mouse 't) ;; scroll window under mouse
     
-;(setq scroll-step 1) ;; keyboard scroll one line at a time
+(setq scroll-step 1) ;; keyboard scroll one line at a time
 
-;(setq scroll-conservatively 5)
+(setq scroll-conservatively 10000)
+
+(setq scroll-margin 1
+      scroll-conservatively 0
+      scroll-up-aggressively 0.00001
+      scroll-down-aggressively 0.00001)
+(setq-default scroll-up-aggressively 0.00001
+	      scroll-down-aggressively 0.00001)
 
 
 ;(global-set-key [mouse-4] (kbd "C-u 1 C-v")) ;
@@ -116,3 +124,8 @@
 
 (add-to-list 'el-get-recipe-path "~/.emacs.d/el-get-user/recipes")
 (el-get 'sync)
+
+(require 'package)
+(add-to-list 'package-archives
+             '("melpa-stable" . "https://stable.melpa.org/packages/"))
+(package-initialize)
