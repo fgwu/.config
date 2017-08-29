@@ -1,2 +1,2 @@
-#!/usr/bin/bash
-emacs -nw "$@"
+#!/bin/bash
+TERM=xterm-256color emacs -nw "$@"
