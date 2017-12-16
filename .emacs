@@ -28,7 +28,7 @@
                 (setq show-trailing-whitespace t)
                 (c-set-style "linux-tabs-only")))))
 
-(setq c-basic-offset 2)
+(setq c-basic-offset 8)
 
 ; for cscope
 (require 'xcscope)
@@ -49,7 +49,6 @@
  '(cscope-line-face ((t (:foreground "brightblack"))))
  '(font-lock-function-name-face ((t (:foreground "cyan"))))
  '(font-lock-string-face ((t (:foreground "red")))))
-
 (set-face-foreground 'minibuffer-prompt "brightcyan")
 
 ; for etags
@@ -130,3 +129,7 @@
 (add-to-list 'package-archives
              '("melpa-stable" . "https://stable.melpa.org/packages/"))
 (package-initialize)
+
+(add-hook 'sh-mode-hook (lambda () (sh-electric-here-document-mode -1)))
+
+(global-unset-key (kbd "C-z"))
