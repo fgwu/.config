@@ -18,6 +18,7 @@ ubuntu-install:
 	cp .bashrc-ubuntu ~/.bashrc 
 	cp .bash_aliases ~
 	cp .emacs ~
+	cp .tmux.conf ~
 	sudo cp myemacs /usr/local/bin
 	make common
 
