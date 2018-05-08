@@ -28,7 +28,17 @@
                 (setq show-trailing-whitespace t)
                 (c-set-style "linux-tabs-only")))))
 
-(setq c-basic-offset 8)
+
+(add-hook 'c++-mode-hook
+          (lambda ()
+	    (setq c-basic-offset 4)))
+
+(add-hook 'c-mode-hook
+          (lambda ()
+	    (setq c-basic-offset 8)))
+
+
+;(setq c-basic-offset 4)
 
 ; for cscope
 (require 'xcscope)
