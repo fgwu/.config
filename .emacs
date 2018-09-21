@@ -29,13 +29,15 @@
                 (c-set-style "linux-tabs-only")))))
 
 
+(add-to-list 'auto-mode-alist '("\\.h\\'" . c++-mode))
+
 (add-hook 'c++-mode-hook
           (lambda ()
-	    (setq c-basic-offset 4)))
+	    (setq c-basic-offset 2)))
 
 (add-hook 'c-mode-hook
           (lambda ()
-	    (setq c-basic-offset 8)))
+	    (setq c-basic-offset 4)))
 
 
 ;(setq c-basic-offset 4)
@@ -143,3 +145,11 @@
 (add-hook 'sh-mode-hook (lambda () (sh-electric-here-document-mode -1)))
 
 (global-unset-key (kbd "C-z"))
+(setq column-number-mode t)
+
+; 80 column rule
+(require 'whitespace)
+(setq whitespace-line-column 80) ;; limit line length
+(setq whitespace-style '(face lines-tail))
+
+(add-hook 'prog-mode-hook 'whitespace-mode)
