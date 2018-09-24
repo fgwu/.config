@@ -43,8 +43,8 @@
 ;(setq c-basic-offset 4)
 
 ; for cscope
-(require 'xcscope)
-(cscope-setup)
+;(require 'xcscope)
+;(cscope-setup)
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
