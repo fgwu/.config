@@ -14,7 +14,7 @@ centos-install:
 	make common
 
 ubuntu-install:
-	sudo apt-get -y install net-tools emacs git cscope bc mlocate xauth crash wget libncurses-dev python-pip tmux libtool automake
+	sudo apt-get -y install net-tools emacs git cscope bc mlocate xauth crash wget libncurses-dev python-pip tmux libtool automake libgflags-dev  libboost-all-dev
 	cp .bashrc-ubuntu ~/.bashrc 
 	cp .bash_aliases ~
 	cp .emacs ~
