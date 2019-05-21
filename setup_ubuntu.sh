@@ -3,7 +3,8 @@
 sudo apt-get -y install build-essential net-tools emacs git \
      cscope bc mlocate xauth crash wget libncurses-dev \
      python-pip tmux libtool automake libgflags-dev  \
-     libboost-all-dev curl #clang-format will be installed belos
+     libboost-all-dev curl gnuplot  silversearcher-ag \
+     #clang-format will be installed belos
 cp .bashrc-ubuntu ~/.bashrc
 cp .bash_aliases ~
 cp .emacs ~
