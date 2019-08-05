@@ -19,7 +19,7 @@ ubuntu-install:
 	cp .bash_aliases ~
 	cp .emacs ~
 	cp .tmux.conf ~
-	sudo cp myemacs /usr/local/bin
+	sudo cp myemacs clang-format-diff.py /usr/local/bin
 	make common
 
 common:
