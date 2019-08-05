@@ -154,3 +154,12 @@
 (setq whitespace-style '(face lines-tail))
 
 (add-hook 'prog-mode-hook 'whitespace-mode)
+
+
+;; suppress namespace indent in c++
+(defconst my-cc-style
+  '("gnu"
+    (c-offsets-alist . ((innamespace . [0])))))
+
+(c-add-style "my-cc-style" my-cc-style)
+(add-hook 'c++-mode-hook (lambda () (c-set-style "my-cc-style") )) 
